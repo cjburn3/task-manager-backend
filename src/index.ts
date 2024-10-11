@@ -1,15 +1,21 @@
 import express from 'express';
-import cors from 'cors';
-import taskRoutes from './api/taskRoutes';
+import { json } from 'body-parser';
+import { taskRoutes } from './api/taskRoutes';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env
+dotenv.config();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
-
-// Routes
-app.use('/api/tasks', taskRoutes);
-
 const PORT = process.env.PORT || 3000;
+
+// Middleware to parse incoming JSON requests
+app.use(json());
+
+// Routes for tasks
+app.use('/tasks', taskRoutes);
+
+// Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
