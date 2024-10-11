@@ -6,6 +6,6 @@ const taskController_1 = require("../controllers/taskController");
 const router = (0, express_1.Router)();
 exports.taskRoutes = router;
 // Route to get all tasks
-router.get('/', (req, res) => (0, taskController_1.getTasks)(req, res));
+router.get('/', taskController_1.getTasks); // No need to wrap in another function
 // Route to create a new task
-router.post('/', (req, res) => (0, taskController_1.createTask)(req, res));
+router.post('/', taskController_1.createTask); // No need to wrap in another function
