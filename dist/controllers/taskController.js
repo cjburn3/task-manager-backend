@@ -8,7 +8,7 @@ const getTasks = async (req, res) => {
     if (error) {
         return res.status(500).json({ error: 'Error fetching tasks' });
     }
-    res.status(200).json({ tasks: data });
+    return res.status(200).json({ tasks: data });
 };
 exports.getTasks = getTasks;
 // Controller to create a new task
@@ -21,6 +21,6 @@ const createTask = async (req, res) => {
     if (error) {
         return res.status(500).json({ error: 'Error creating task' });
     }
-    res.status(201).json({ task: data });
+    return res.status(201).json({ task: data });
 };
 exports.createTask = createTask;
