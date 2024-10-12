@@ -3,7 +3,7 @@
     "target": "ESNext",
     "module": "commonjs",
     "strict": true,
-    "skipLibCheck": true, // Add this line
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
@@ -15,5 +15,3 @@
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
-
-  

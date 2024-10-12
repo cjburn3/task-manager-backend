@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { supabase } from '../supabaseClient';
 
-// Controller to get all tasks
 export const getTasks = async (req: Request, res: Response) => {
   const { data, error } = await supabase.from('tasks').select('*');
   if (error) {
@@ -10,7 +9,6 @@ export const getTasks = async (req: Request, res: Response) => {
   return res.status(200).json({ tasks: data });
 };
 
-// Controller to create a new task
 export const createTask = async (req: Request, res: Response) => {
   const { title, description } = req.body;
 
