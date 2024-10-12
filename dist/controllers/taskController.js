@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createTask = exports.getTasks = void 0;
 const supabaseClient_1 = require("../supabaseClient");
-// Controller to get all tasks
 const getTasks = async (req, res) => {
     const { data, error } = await supabaseClient_1.supabase.from('tasks').select('*');
     if (error) {
@@ -11,7 +10,6 @@ const getTasks = async (req, res) => {
     return res.status(200).json({ tasks: data });
 };
 exports.getTasks = getTasks;
-// Controller to create a new task
 const createTask = async (req, res) => {
     const { title, description } = req.body;
     if (!title || !description) {
