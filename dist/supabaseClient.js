@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.supabase = void 0;
+require("dotenv/config");
 const supabase_js_1 = require("@supabase/supabase-js");
 // Define your own types if necessary
 const supabaseUrl = process.env.SUPABASE_URL;
