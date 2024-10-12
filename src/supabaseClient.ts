@@ -1,7 +1,13 @@
-import 'dotenv/config';
 import { createClient } from '@supabase/supabase-js';
+import dotenv from 'dotenv';
 
-const supabaseUrl = process.env.SUPABASE_URL!;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY!;
+dotenv.config();
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabaseUrl = process.env.SUPABASE_URL || '';
+const supabaseKey = process.env.SUPABASE_KEY || '';
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error('Supabase URL or Key is missing.');
+}
+
+export const supabase = createClient(supabaseUrl, supabaseKey);
