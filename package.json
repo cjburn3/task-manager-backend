@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "tsc && nodemon dist/index.js",
     "build": "npx next build",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "test"
   },
   "dependencies": {
     "@supabase/supabase-js": "^1.35.7",
