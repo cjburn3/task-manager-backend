@@ -16,3 +16,10 @@ This is the backend API for managing tasks, built with Node.js, Express, TypeScr
 
 - `GET /tasks` - Fetch all tasks
 - `POST /tasks` - Create a new task
+
+## Running Tests
+
+To run the tests, make sure you have all dependencies installed and run:
+
+```bash
+npm test
